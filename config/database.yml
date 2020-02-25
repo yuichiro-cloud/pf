@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: pf_production
-  username: pf
-  password: <%= ENV['PF_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
