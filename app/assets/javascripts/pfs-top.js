@@ -20,6 +20,38 @@ $(function(){
   Yuichiro Ito
   </div>`
 
+  var left = `<div class="left">
+  <a href="/">H O M E</a>
+  </div>`
+
+  var box = `
+  <div class="box__left">
+  <div class="box__left__about">
+  <a href="/pfs/about">a b o u t</a>
+  </div>
+  <div class="box__left__pf">
+  <a href="/pfs">p o r t f o l i o</a>
+  </div>
+  </div>
+  <div class="box__btn">
+  menu
+  </div>`
+
+  // var menu = `<div class="box" id="box">
+  // <div class="box__right" id="menu-btn">
+  // menu
+  // </div>
+  // </div>`
+
+  // var menu2 = `
+  // <div class="box__menu">
+  // <div class="box__menu__about">
+  // about
+  // </div>
+  // <div class="box__menu__pf">
+  // portfolio
+  // </div>
+  // </div>`
   window.onload = function(){
     // ページ読み込み時に実行したい処理
     $("#page-loading").append(loading);
@@ -45,27 +77,36 @@ $(function(){
     console.log("pf")
     $(".main").append(portfolio);
     $(".main__pf").delay(2500).animate(
-      {"top":"100px"
-    }
+      {"top":"-300px"}
     )
     $.dequeue($("#page-loaded")[0]);
   });       //portfolioを追加する関数のend
 
-  $("#page-loaded").delay(3000).queue(function(){   //creatorをappend
+  $("#page-loaded").delay(2800).queue(function(){   //creatorをappend
     $(".main").append(creator);
-    $(".main__creator").delay(2500).animate(
-      {"top":"200px"}
+    $(".main__creator").delay(1000).animate(
+      {"top":"-100px"}
     )
     $.dequeue($("#page-loaded")[0]);
   });
 
   $("#page-loaded").delay(3000).queue(function(){   //nameをappend
     $(".main").append(name);
-    $(".main__name").delay(2500).animate(
-      {"top":"300px"
-    }
-    )
+    $(".main__name").delay(1000).animate(
+      {"top":"100px"},
+      {"fontSize": "120px"})
     $.dequeue($("#page-loaded")[0]);
   });
 
+  $("#page-loaded").delay(3000).queue(function(){   //homeボタンをappend
+    $(".loaded").append(left);
+    $.dequeue($("#page-loaded")[0]);
+  });
+
+  $("#page-loaded").queue(function(){   //menuボタンをappend
+    console.log("right")
+    $("#menu-box").append(box);
+    $.dequeue($("#page-loaded")[0]);
+  });
+  
 });

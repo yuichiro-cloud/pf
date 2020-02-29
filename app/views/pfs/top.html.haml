@@ -5,8 +5,16 @@
         .load#loading
           -# = "l o a d i n g"
       .loaded#page-loaded
+        .box#menu-box
+          -# .box__left
+          -#   .box__left__about
+          -#     = link_to "a b o u t",about_pfs_path
+          -#   .box__left__pf
+          -#     = link_to "p o r t f o l i o",pfs_path
+          -# .box__btn
+          -#   = "menu"
         .main
-          .main__welcome
+        -#   .main__welcome
             -# = "Welcome"
           -# .main__pf
             -# = "portfolio"
@@ -14,3 +22,8 @@
           -#   = "creator"
           -# .main__name
           -#   = "Yuichiro Ito"
+        -# .left
+        -#   = link_to "H O M E",root_path
+          -# = "Home"
+        -# .right#menu-btn
+        -#   = "menu"
