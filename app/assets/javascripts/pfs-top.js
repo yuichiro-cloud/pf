@@ -36,22 +36,7 @@ $(function(){
   <div class="box__btn">
   menu
   </div>`
-
-  // var menu = `<div class="box" id="box">
-  // <div class="box__right" id="menu-btn">
-  // menu
-  // </div>
-  // </div>`
-
-  // var menu2 = `
-  // <div class="box__menu">
-  // <div class="box__menu__about">
-  // about
-  // </div>
-  // <div class="box__menu__pf">
-  // portfolio
-  // </div>
-  // </div>`
+  
   window.onload = function(){
     // ページ読み込み時に実行したい処理
     $("#page-loading").append(loading);
@@ -108,5 +93,5 @@ $(function(){
     $("#menu-box").append(box);
     $.dequeue($("#page-loaded")[0]);
   });
-  
+
 });

@@ -62,43 +62,64 @@
     //   }
     // }
       .box{
-         position: absolute;
+        position: absolute;
         top: 20px;
         right: 10px;
         display: flex;
-        background-color: pink;
-        background-color: rgba(255, 255, 255, 0.082);
         &__left{
-        display: flex;
-        font-size: 0px;       //hoverで20pxに戻すため
-        display: flex;
-        line-height: 50px;
-        justify-content: space-evenly;
-        opacity: 0.8;
+          display: flex;
+          font-size: 0px;       //hoverで20pxに戻すため
+          display: flex;
+          line-height: 50px;
+          justify-content: space-evenly;
+          opacity: 0.8;
+          // background-color: rgba(255, 255, 255, 0.24);
           &__about{
+            // background-color: red;
             a{
               color: white;
+              padding-bottom: 4px;
+              padding-left: 6px;
+              padding-right: 6px;
             }
           }
           &__pf{
             a{
               color: white;
+              padding-bottom: 4px;
+              padding-left: 6px;
+              padding-right: 6px;
             }
           }
         }
         &__btn{
-        background-color: white;
-        height: 50px;
-        width: 120px;
-        color: black;
-        line-height: 50px;
-        text-align: center;
+          background-color: white;
+          height: 60px;
+          width: 120px;
+          color: black;
+          line-height: 60px;
+          text-align: center;
         }
       }
       .box:hover{
         .box__left{
           width: 70vw;
           font-size: 20px;
+          height: 60px;
+          line-height: 60px;
+          background-color: rgba(255, 255, 255, 0.24);
+          &__about{
+            a:hover{
+              border-bottom: 2px solid rgba(255, 255, 255, 0.61);
+              transition: 0.4s;
+            }
+          }
+          &__pf{
+            a:hover{
+              border-bottom: 2px solid rgba(255, 255, 255, 0.61);
+              transition: 0.4s;
+            }
+          }
         }
       }
     
