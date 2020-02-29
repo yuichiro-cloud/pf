@@ -1,0 +1,52 @@
+@mixin center {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.pfs{
+  .about{
+    background-color: black;
+    height: 1000px;
+    width: 100vw;
+    &__home{
+        font-family: "Apple Chancery";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: white;
+        opacity: 0.8;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        animation: gradatebtn 1s;
+          a{
+            z-index: 1;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            color: black;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      &__home:hover{
+        width: 200px;
+      }
+    &__title{
+      font-family: "Apple Chancery";
+      height: 100px;
+      color: white;
+      font-size: 80px;
+
+      text-align: center;
+      position: absolute;
+      @include center;
+      animation: rotate 1.3s;
+    }
+  }
+
+}
