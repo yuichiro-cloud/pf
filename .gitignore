@@ -25,3 +25,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/Users/macdonalds/projects/pf/.DS_Store
+/Users/macdonalds/projects/pf/app/.DS_Store
