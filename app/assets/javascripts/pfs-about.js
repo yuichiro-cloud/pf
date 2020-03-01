@@ -37,6 +37,7 @@ $(function(){
 
         
         
+      $("#about").queue(function(){
         $(window).scroll(function() {       //aboutが終わってからスクロールイベントが発火
 
         var scroll = $(this).scrollTop();
@@ -46,7 +47,6 @@ $(function(){
             var third = $(".box__contents__main__third").offset().top;
             var bottom = $(".box__contents__main__bottom").offset().top;
             
-            $("#about").queue(function(){
               if(scroll > contents - 400){     //contentsの400px上からopacityを1にする
                 $(".box__contents").animate(
                   {"opacity":"0.7"}
@@ -74,6 +74,6 @@ $(function(){
                 )
               }
               $.dequeue($("#about")[0]);
-            })
             });
+          })
 });
