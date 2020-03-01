@@ -17,34 +17,63 @@ $(function(){
       $.dequeue($("#about")[0]);
     });       //aboutを追加する関数のend
     
-    $("#about").delay(3000).queue(function(){
+    $("#about").delay(3000).queue(function(){   //スクロールさせるために全体を100vhから100%
       $(".box").css(
-        {"height":"800vh"}
+        {"height":"100%"}
+        )
+        $(".box__contents").css(    //.box__contents以下のdisplay:noneを解除
+          {"display":"block"}
         )
         console.log("aaaaaa");
+        $.dequeue($("#about")[0]);
+      });
+
+      $("#about").queue(function(){   //下までイベントを発火させるために後からpadding-bottomを追加
+        $(".box").css(
+          {"paddingBottom":"300px"}
+        )
+        $.dequeue($("#about")[0]);
+      });
 
         
         
         $(window).scroll(function() {       //aboutが終わってからスクロールイベントが発火
-          console.log("iii")
-        console.log($(this).scrollTop());
-        
-          // );
-          $(".box__contents").animate(
-            {"width":"90%"},(1000)
-            // {"width":"90%"}
-            )
-            $(".box__contents__text").animate(
-              {"fontSize":"20px"},(1000)
-              // {"fontSize":"20px"}
-              
-            )
+
+        var scroll = $(this).scrollTop();
+            var contents = $(".box__contents").offset().top;    //それぞれの要素のtopだけを抜き出す
+            var first = $(".box__contents__main__first").offset().top;
+            var second = $(".box__contents__main__second").offset().top;
+            var third = $(".box__contents__main__third").offset().top;
+            var bottom = $(".box__contents__main__bottom").offset().top;
             
-          })
-        });
-        // $(".box__contents").css({"opacity":"1"})
-      // $(".box__contents").css({"opacity":"1"})
-   
-  // var scroll = $(window).scrollTop(188);
-  // console.log(scroll);
+            $("#about").queue(function(){
+              if(scroll > contents - 400){     //contentsの400px上からopacityを1にする
+                $(".box__contents").animate(
+                  {"opacity":"0.7"}
+                )
+              }
+              if(scroll > first - 400){     //firstの400px上からopacityを1にする
+                $(".box__contents__main__first").animate(
+                  {"opacity":"1"},(1500)
+                )
+              }
+              if(scroll > second - 400){     //secondの400px上からopacityを1にする
+                $(".box__contents__main__second").animate(
+                  {"opacity":"1"},(1500)
+                )
+              }
+              if(scroll > third - 400){     //thirdの400px上からopacityを1にする
+                $(".box__contents__main__third").animate(
+                  {"opacity":"1"},(1500)
+                )
+                
+              }
+              if(scroll > third - 400){     //bottomの400px上からopacityを1にする
+                $(".box__contents__main__bottom").animate(
+                  {"opacity":"1"},(1500)
+                )
+              }
+              $.dequeue($("#about")[0]);
+            })
+            });
 });
