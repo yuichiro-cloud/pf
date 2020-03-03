@@ -3,6 +3,9 @@ $(function(){
   var about = `<div class="box__title">
   A b o u t
   </div>`
+  var left = `<div class="box__home">
+  <a href="/">H O M E</a>
+  </div>`
 
 
   
@@ -17,8 +20,8 @@ $(function(){
       $.dequeue($("#about")[0]);
     });       //aboutを追加する関数のend
     
-    $("#about").delay(3000).queue(function(){   //スクロールさせるために全体を100vhから100%
-      $(".box").css(
+    $("#about").delay(3000).queue(function(){   
+      $(".box").css(    //スクロールさせるために全体を100vhから100%
         {"height":"100%"}
         )
         $(".box__contents").css(    //.box__contents以下のdisplay:noneを解除
@@ -32,6 +35,11 @@ $(function(){
         $(".box").css(
           {"paddingBottom":"300px"}
         )
+        $.dequeue($("#about")[0]);
+      });
+
+      $("#about").queue(function(){   //homeボタンをappend
+        $("#about").append(left);
         $.dequeue($("#about")[0]);
       });
 
