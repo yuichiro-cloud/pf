@@ -1,3 +1,22 @@
 .pfs
   .index
+    .contents#portfolio-contents
+      -# .contents__home
+      -#   = link_to "H O M E",root_path
+      -# .contents__title
+      -#   = "P o r t f o l i o"
+      .contents__info
+        = "作品紹介"
+      .contents__main
+        .contents__main__road
+          .contents__main__road__header
+            = link_to roadbiker_pfs_path do
+              = "RoadBiker"
+          .contents__main__road__image
+            = link_to roadbiker_pfs_path do
+              = image_tag "roadbiker.png",width:"400px"
+          .contents__main__road__text
+            = "趣味のRoadBikeについてのWebアプリケーション"
+        
+
     
