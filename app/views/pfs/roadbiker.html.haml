@@ -1,10 +1,11 @@
-.pf
+.pf#application
+  -# #click
   .roadbiker
     .road-page#roadbiker
-      -# .road-page__image
-      -#   = image_tag "roadbiker.png"
       .road-page__home
         = link_to "H O M E",root_path
+      .road-page__portfolio
+        = link_to "portfolio",pfs_path
       .road-page__title
         = "RoadBiker"
       .road-page__image

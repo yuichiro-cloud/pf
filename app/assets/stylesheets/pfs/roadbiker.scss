@@ -1,14 +1,30 @@
+#stalker {
+  pointer-events: none;   //これによってlinkなどを押せる
+  position: absolute;
+  top: -18px;     //座標調節（カーソル位置と円の中心を合わせる）
+  left: -18px;    //座標調節（カーソル位置と円の中心を合わせる）
+  width: 36px;   //マウスストーカーの直径
+  height: 36px;  //マウスストーカーの直径
+    color: gold;
+  transform: translate(0,0);
+  transition: transform 0.1s;  //ちょっと遅れてついてくるように
+  transition-timing-function: ease-out;
+  z-index: 999;
+}
 .pf{
+  #click{
+    position: absolute;
+    transform: translate(0,0);
+    // display: none;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+  }
   .roadbiker{
     .road-page{
       background-color: black;
       // height: 100vh;
       height: 100%;
-      // &__image{
-      //   img{
-      //     animation: shrink 0.5s 1;
-      //   }
-      // }
       &__home{
         font-family: "Apple Chancery";
         position: absolute;
@@ -20,7 +36,7 @@
         height: 100px;
         text-align: center;
         line-height: 100px;
-        animation: gradatebtn 1s;
+        animation: gradatebtn linear 1s;
         transition: 0.6s;
         a{
           z-index: 1;
@@ -37,9 +53,40 @@
         background-color: rgba(255, 255, 255, 0.678);
         opacity: 0.8;
         transition: 0.4s;
+        letter-spacing: 5px;
+      }
+      &__portfolio{
+        font-family: "Apple Chancery";
+        position: absolute;
+        top: 120px;
+        left: 10px;
+        background-color: white;
+        opacity: 0.8;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        animation: gradatebtn linear 1s;
+        transition: 0.6s;
+        a{
+          z-index: 1;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+          color: black;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &__portfolio:hover{
+        letter-spacing: 10px;
+        width: 200px;
+        background-color: rgba(255, 255, 255, 0.678);
+        opacity: 0.8;
+        transition: 0.4s;
       }
       &__title{
-        padding-top: 20vh;
+        padding-top: 25vh;
         text-align: center;
         color: white;
         font-size: 80px;
@@ -48,24 +95,21 @@
         letter-spacing: -4px;
         padding-bottom: 20px;
         color: #4790BB;
-        animation: gradate 5s;
+        animation: gradate linear 5s;
       }
       &__image{
         // background-color: white;
         text-align: center;
-        padding-top: 30vh;
-        padding-bottom: 20vh;
+        padding-top: 20vh;
+        padding-bottom: 15vh;
         img{
-          // animation: rotateImg 20s infinite,shrink .9s ;
-          animation: rotateImg 20s infinite,shrink .9s ;
+          animation: rotateimg 30s linear infinite;
         }
 
       }
       &__contents{
         margin: auto;
-        // padding-top: 20vh;
         width: 90%;
-        // background-color: red; 
         &__box{
           // background-color: blue;
           // width: 90%;
@@ -73,7 +117,9 @@
           display: flex;
           justify-content: space-evenly;
           margin: auto;
-          height: 2000px;
+          // height: 2000px;
+          height: 100%;
+          padding-bottom: 300px;
           &__left{
             color: white;
             padding-top: 150px;
@@ -166,5 +212,19 @@
   60%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
   70%{transform: translate(300px,-100px) rotateX(20deg) rotateY(-80deg)}
   80%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
+  100%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
+}
+
+@keyframes rotateimg {
+  0%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
+  27%{transform: translate(-150px,-50px) rotateX(30deg) rotateY(40deg)}
+  29%{transform: translate(-300px,-100px) rotateX(20deg) rotateY(40deg)rotateZ(360deg)}
+  31%{transform: translate(-310px,-105px) rotateX(20deg) rotateY(40deg)rotateZ(363deg)}
+  33%{transform: translate(-150px,-50px) rotateX(30deg) rotateY(40deg)}
+  50%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
+  67%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
+  69%{transform: translate(300px,-100px) rotateX(20deg) rotateY(-40deg) rotateZ(-360deg)}
+  71%{transform: translate(300px,-100px) rotateX(20deg) rotateY(-40deg) rotateZ(-363deg)}
+  73%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
   100%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
 }

@@ -39,7 +39,7 @@ $("#portfolio-contents").delay(1300).queue(function(){
   $.dequeue($("#portfolio-contents")[0]);
 });
 //スクロールできるようにheightを100%に変更
-  $("#portfolio-contents").delay(3000).queue(function(){
+  $("#portfolio-contents").delay(1400).queue(function(){
     $("#portfolio-contents").css(
       {"height":"100%"}
     )
@@ -69,17 +69,17 @@ $("#portfolio-contents").delay(1300).queue(function(){
     })
   });
 
-  $(".contents__main__road__header,.contents__main__road__image").on("click",function(e){
-    e.preventDefault();
-    $(".contents__main__road__image > a > img").animate(
-      {"width":"100%"},(1500)
-    )
-    $(".contents__inf,.contents__main__road__header,.contents__main__road__text").animate(
-      {"opacity":"0"}
-    )
-    //ページ遷移を遅らせている
-    setTimeout(function(){
-      location.href = 'http://18.178.166.66/pfs/roadbiker';
-    }, 2000);
-  });
+  // $(".contents__main__road__header,.contents__main__road__image").on("click",function(e){
+  //   e.preventDefault();
+  //   $(".contents__main__road__image > a > img").animate(
+  //     {"width":"100%"},(1500)
+  //   )
+  //   $(".contents__inf,.contents__main__road__header,.contents__main__road__text").animate(
+  //     {"opacity":"0"}
+  //   )
+  //   //ページ遷移を遅らせている
+  //   setTimeout(function(){
+  //     location.href = 'http://18.178.166.66/pfs/roadbiker';
+  //   }, 2000);
+  // });
 });
