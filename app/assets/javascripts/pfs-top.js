@@ -37,13 +37,6 @@ $(function(){
   <div class="box__btn">
   menu
   </div>`
-  // $(document).ready(function() {    //クッキー
-  //   var now = new Date()
-  //   var message = 'not-firsttime' + now;
-  //   $.cookie('message', message);
-  //   var cookie = $('#message').text($.cookie('message'));
-  //   console.log(cookie);
-  // });
   
   
   window.onload = function(){
