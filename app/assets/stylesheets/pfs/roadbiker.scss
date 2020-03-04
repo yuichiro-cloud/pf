@@ -14,11 +14,9 @@
 .pf{
   #click{
     position: absolute;
-    transform: translate(0,0);
-    // display: none;
-    height: 50px;
-    width: 50px;
-    background-color: white;
+    font-size: 60px;
+    color: yellow;
+    animation: spin .4s linear infinite,;
   }
   .roadbiker{
     .road-page{
@@ -98,7 +96,6 @@
         animation: gradate linear 5s;
       }
       &__image{
-        // background-color: white;
         text-align: center;
         padding-top: 20vh;
         padding-bottom: 15vh;
@@ -111,13 +108,9 @@
         margin: auto;
         width: 90%;
         &__box{
-          // background-color: blue;
-          // width: 90%;
-          // text-align: center;
           display: flex;
           justify-content: space-evenly;
           margin: auto;
-          // height: 2000px;
           height: 100%;
           padding-bottom: 300px;
           &__left{
@@ -129,9 +122,7 @@
               opacity: 0;
               padding: 20px;
               height: 200px;
-              // width: 200px;
               text-align: center;
-              // line-height: 200px;
               &__title{
                 padding: 10px;
                 font-size: 25px;
@@ -144,8 +135,6 @@
               background-color: rgba(14, 13, 13, 0.377);
               opacity: 0;
               height: 200px;
-              // width: 200px;
-              // padding-top: 100px;
               transform: translate(0px,100px);
               text-align: center;
               &__title{
@@ -161,7 +150,6 @@
           &__right{
             padding-top: 300px;
             color: white;
-            // margin: auto;
             width: 45%;
             &__first{
               opacity: 0;
@@ -203,18 +191,6 @@
   100%{transform: scale(1,1) rotateZ(360deg);}
 }
 
-@keyframes rotateImg {
-  0%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
-  10%{transform: translate(-150px,-50px) rotateX(30deg) rotateY(40deg)}
-  20%{transform: translate(-300px,-100px) rotateX(20deg) rotateY(80deg)}
-  30%{transform: translate(-150px,-50px) rotateX(30deg) rotateY(40deg)}
-  50%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
-  60%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
-  70%{transform: translate(300px,-100px) rotateX(20deg) rotateY(-80deg)}
-  80%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
-  100%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
-}
-
 @keyframes rotateimg {
   0%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
   27%{transform: translate(-150px,-50px) rotateX(30deg) rotateY(40deg)}
@@ -227,4 +203,9 @@
   71%{transform: translate(300px,-100px) rotateX(20deg) rotateY(-40deg) rotateZ(-363deg)}
   73%{transform: translate(150px,-50px) rotateX(30deg) rotateY(-40deg)}
   100%{transform: translate(0px,0px) rotateX(40deg) rotateY(0deg)}
+}
+ 
+@keyframes spin {
+  0%{transform: rotateY(0deg);}
+  100%{transform: rotateY(360deg);}
 }

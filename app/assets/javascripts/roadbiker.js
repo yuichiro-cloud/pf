@@ -4,15 +4,12 @@ $(function(){
   <a href="/pfs">portfolio</a>
   </div>`
 
-  var click = `<div id="click"></div>`
 
   //jsでtransformを扱うとこのようになる
 $(document).mousemove(function(e){
   // console.log("move")
   var movex = e.pageX;
   var movey = e.pageY;
-  // console.log(stalker)
-  // console.log(movex,movey)
   stalker.style.transform = 'translate(' + movex + 'px, ' + movey + 'px)';
 });
 
@@ -50,18 +47,25 @@ $(document).mousemove(function(e){
         )
       }
     })
+    $.dequeue($("#roadbiker")[0]);
   })
 
-  // $(document).getElementById("application").onclick = function(e){
-  //   var x = e.pageX;
-  //   var y = e.pageY;
-  //   console.log(x,y);
-  //   console.log(click)
-  //   click.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-  //   // $(".click").css(
-  //   //   {"display":"block"}
-  //   // )
-  //   $("#application").append(click);
-  // };
+  $(document).on("click",function(e){
+    var x = e.pageX - 33;   //クリックした位置に正確に星を追加する
+    var y = e.pageY - 29;
+
+    var click = $(`<i class="fas fa-star" id="click"></i>`) //セレクタ指定できるようにしている
+  
+    $(".pf, .pfs").append(click);
+  $(click).css({    //追加したclick自身のpositionを変更
+    'left':x,
+    'top':y
+  });
+  $(click).fadeOut(10000).queue(function() {    //追加してから10s後に消す
+    $(click).remove();
+    $.dequeue($(click)[0]);
+});
+
+  });
 
 });
