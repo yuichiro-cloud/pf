@@ -37,20 +37,11 @@ $(function(){
   <div class="box__btn">
   menu
   </div>`
-  // $(document).ready(function() {    //クッキー
-  //   var now = new Date()
-  //   var message = 'not-firsttime' + now;
-  //   $.cookie('message', message);
-  //   var cookie = $('#message').text($.cookie('message'));
-  //   console.log(cookie);
-  // });
   
   
   window.onload = function(){
     // ページ読み込み時に実行したい処理
-    console.log("loading");
     $(".pfs").append(loading);
-    // $(".application").append(loading);
     
     function loaderremove(){    //loadingボタンを消す
       $("#page-loading").remove();
@@ -59,13 +50,11 @@ $(function(){
     setTimeout(loaderremove,3000);    //一定時間でloadingを消す
   }
   
-  // if($.cookie('message', message) == nil){
   $('#page-loaded').delay(3000).queue(function(){
     $(".main").append(welcome);
     $(function(){
-      function welcomeremove(){       //appendしたwelcomeを消すためにdocument
-        // $(".main__welcome").remove();     //welcomeをfadeout
-        $(".main__welcome").fadeOut();
+      function welcomeremove(){       //appendしたwelcomeを消すためにdocument    
+        $(".main__welcome").fadeOut();    //welcomeをfadeout
       }
       setTimeout(welcomeremove,4700);     //一定時間でwelcomeを消す
       $.dequeue($("#page-loaded")[0]);
@@ -74,7 +63,6 @@ $(function(){
 // }
   
   $('#page-loaded').queue(function(){
-    console.log("pf")
     $(".main").append(portfolio);
     $(".main__pf").delay(1300).animate(
       {"top":"-300px"}
@@ -104,9 +92,10 @@ $(function(){
   });
   
   $("#page-loaded").queue(function(){   //menuボタンをappend
-    console.log("right")
     $("#menu-box").append(box);
     $.dequeue($("#page-loaded")[0]);
   });
+
+  
 
 });

@@ -39,7 +39,7 @@ $("#portfolio-contents").delay(1300).queue(function(){
   $.dequeue($("#portfolio-contents")[0]);
 });
 //スクロールできるようにheightを100%に変更
-  $("#portfolio-contents").delay(3000).queue(function(){
+  $("#portfolio-contents").delay(1400).queue(function(){
     $("#portfolio-contents").css(
       {"height":"100%"}
     )
@@ -50,9 +50,7 @@ $("#portfolio-contents").delay(1300).queue(function(){
   });
   //homeボタンを追加
   $("#portfolio-contents").queue(function(){
-    console.log("home1")
     $("#portfolio-contents").append(home);
-    console.log("home2")
     $.dequeue($("#portfolio-contents")[0]);
   });
   //roadをスクロールでopacityを0.9に。

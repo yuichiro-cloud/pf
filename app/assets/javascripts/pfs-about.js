@@ -10,8 +10,6 @@ $(function(){
 
   
   $('#about').delay(3000).queue(function(){
-    // $('#about').queue(function(){
-    console.log("ab")
     $("#about").append(about);
     $(".box__title").delay(1300).animate(
       // $(".box__title").animate(
@@ -27,7 +25,6 @@ $(function(){
         $(".box__contents").css(    //.box__contents以下のdisplay:noneを解除
           {"display":"block"}
         )
-        console.log("aaaaaa");
         $.dequeue($("#about")[0]);
       });
 
