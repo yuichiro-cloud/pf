@@ -176,6 +176,12 @@
               }
               &__text{
                 padding: 10px;
+                .roadbiker-link{
+                  color: white;
+                }
+                .roadbiker-link:hover{
+                  opacity: 0.7;
+                }
               }
             }
           }
