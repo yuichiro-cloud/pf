@@ -177,9 +177,15 @@
               &__text{
                 padding: 10px;
                 .roadbiker-link{
-                  color: white;
+                  color: #4790BB;
                 }
                 .roadbiker-link:hover{
+                  opacity: 0.7;
+                }
+                .roadbiker-readme{
+                  color: white;
+                }
+                .roadbiker-readme:hover{
                   opacity: 0.7;
                 }
               }
