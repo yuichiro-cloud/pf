@@ -61,7 +61,7 @@ $(document).mousemove(function(e){
     'left':x,
     'top':y
   });
-  $(click).fadeOut(10000).queue(function() {    //追加してから10s後に消す
+  $(click).fadeOut(3000).queue(function() {    //追加してから3s後に消す
     $(click).remove();
     $.dequeue($(click)[0]);
 });

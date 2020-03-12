@@ -78,6 +78,7 @@ $("#portfolio-contents").delay(1300).queue(function(){
     //ページ遷移を遅らせている
     setTimeout(function(){
       location.href = 'http://18.178.166.66/pfs/roadbiker';
+      // location.href = 'http://localhost:3000/pfs/roadbiker'
     }, 2000);
   });
 });
